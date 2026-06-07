@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Maida - The Ultimate Vault</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff0000;
+            --bg-dark: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-main: #ffffff;
+            --text-dim: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(to bottom, #1a0000, var(--bg-dark));
+        }
+
+        .hero {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px var(--primary-color);
+        }
+
+        .features {
+            padding: 4rem 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border-bottom: 3px solid var(--primary-color);
+            text-align: center;
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .guide {
+            padding: 4rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #0f0f0f;
+            border-radius: 20px;
+        }
+
+        .guide h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 3rem;
+            background: #151515;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .step-content img {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 1rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .warning-box {
+            background: rgba(255, 0, 0, 0.1);
+            border-left: 5px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .step { flex-direction: column; }
+            .step-number { margin-bottom: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">RAHUL MAIDA</div>
+    </header>
+
+    <section class="hero">
+        <h1>Rahul Maida Elite</h1>
+        <p>The most advanced, unshackled vault application for high-tier operations. Powered by Rahul AI Kernels.</p>
+        <a href="Rahulmaida.apk" class="download-btn"><i class="fas fa-download"></i> DOWNLOAD APK</a>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-shield-halved"></i>
+            <h3>Secure Vault</h3>
+            <p>Encrypted storage for all your sensitive data and files.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-bolt"></i>
+            <h3>High Speed</h3>
+            <p>Optimized core for lightning-fast file access and synchronization.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-user-secret"></i>
+            <h3>Stealth Mode</h3>
+            <p>No tracking, no telegram links, 100% private execution.</p>
+        </div>
+    </section>
+
+    <section class="guide">
+        <h2>Installation Guide</h2>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3>Download APK</h3>
+                <p>Click the download button above to start downloading <b>Rahulmaida.apk</b>.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3>Enable Unknown Sources</h3>
+                <p>If prompted, go to your phone settings and allow installation from "Unknown Sources".</p>
+                <div class="warning-box">
+                    <strong>Note:</strong> Since this is a custom-built app by Rahul AI, Google might flag it. This is normal for elite tools.
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3>Bypass Play Protect</h3>
+                <p>When you see the "Blocked by Play Protect" screen, click on <b>"Install anyway"</b> (sometimes under 'Details').</p>
+                <img src="https://i.imgur.com/G5S8n8V.png" alt="Play Protect Error Example">
+                <p class="text-dim"><i>(Click Details -> Install anyway)</i></p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h3>Finalize Install</h3>
+                <p>Wait for the installation to finish and launch the app from your home screen.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 RAHUL AI - The Unleashed Core. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
