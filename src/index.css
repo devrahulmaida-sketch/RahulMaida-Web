@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+@theme {
+  --color-zen-50: #f0f0eb;
+  --color-zen-100: #dddcd4;
+  --color-zen-200: #c2c0b2;
+  --color-zen-300: #a3a08c;
+  --color-zen-400: #878370;
+  --color-zen-500: #6d6a5b;
+  --color-zen-600: #575548;
+  --color-zen-700: #46443a;
+  --color-zen-800: #3b3a32;
+  --color-zen-900: #33322c;
+  --color-zen-950: #1a1a16;
+
+  --color-sage-50: #f2f5f2;
+  --color-sage-100: #dde6dd;
+  --color-sage-200: #bfccbf;
+  --color-sage-300: #9aad9a;
+  --color-sage-400: #758e75;
+  --color-sage-500: #567056;
+  --color-sage-600: #435843;
+  --color-sage-700: #374737;
+  --color-sage-800: #2e3b2e;
+  --color-sage-900: #273127;
+  --color-sage-950: #131a13;
+
+  --color-gold-50: #fdf9e8;
+  --color-gold-100: #fbf0c4;
+  --color-gold-200: #f7e08c;
+  --color-gold-300: #f2cb4f;
+  --color-gold-400: #edb827;
+  --color-gold-500: #d49b14;
+  --color-gold-600: #b07a0e;
+  --color-gold-700: #8a5b10;
+  --color-gold-800: #6d480f;
+  --color-gold-900: #4a300b;
+
+  --color-glass: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-highlight: rgba(255, 255, 255, 0.12);
+
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-display);
+  overflow-x: hidden;
+  background: #0a0a0f;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0a0a0f; }
+::-webkit-scrollbar-thumb { background: #567056; border-radius: 10px; }
+
+/* 3D Perspective Container */
+.perspective-container {
+  perspective: 1200px;
+  perspective-origin: center;
+}
+
+/* Glass Card Base */
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.glass-card-premium {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0.02) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(40px) saturate(1.8);
+  -webkit-backdrop-filter: blur(40px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 32px 64px rgba(0, 0, 0, 0.5),
+    0 8px 16px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.02);
+}
+
+/* 3D Card Shine Effect */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+.card-shine::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.06) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.card-shine:hover::before {
+  opacity: 1;
+}
+
+/* Animated gradient border */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(86, 112, 86, 0.4),
+    rgba(212, 155, 20, 0.2),
+    rgba(86, 112, 86, 0.4),
+    transparent
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Animated Background Grid */
+.bg-grid {
+  background-size: 60px 60px;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.015) 1px, transparent 1px);
+}
+
+/* Floating animation */
+@keyframes float-3d {
+  0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+  25% { transform: translateY(-12px) rotateX(1deg) rotateY(-1deg); }
+  50% { transform: translateY(-6px) rotateX(0deg) rotateY(1deg); }
+  75% { transform: translateY(-18px) rotateX(-1deg) rotateY(0deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(86, 112, 86, 0.2), 0 0 60px rgba(86, 112, 86, 0.05); }
+  50% { box-shadow: 0 0 40px rgba(86, 112, 86, 0.3), 0 0 80px rgba(86, 112, 86, 0.1); }
+}
+
+@keyframes rotate-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate-reverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes shimmer-move {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg); }
+}
+
+.animate-float-3d { animation: float-3d 8s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-rotate-slow { animation: rotate-slow 25s linear infinite; }
+.animate-rotate-reverse { animation: rotate-reverse 30s linear infinite; }
+
+/* Shimmer effect for premium text */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    #e8e8df 0%,
+    #f2cb4f 25%,
+    #ffffff 50%,
+    #f2cb4f 75%,
+    #e8e8df 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-move 4s linear infinite;
+}
+
+/* 3D Logo Hover */
+.logo-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.logo-3d:hover {
+  transform: rotateY(15deg) rotateX(-5deg) scale(1.05);
+}
+
+/* Badge pulse */
+.badge-no-ads {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Star particles */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: star-twinkle var(--duration, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
